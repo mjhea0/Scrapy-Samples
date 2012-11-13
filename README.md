@@ -1,7 +1,7 @@
 Scrapy Samples
 ==============
 
-This project contains sample scraping projects/tutorials as detailed in my blog. If you need help with downloading Scrapy and installing the dependencies, please watch this video - install scrapy
+This project contains sample scraping projects/tutorials as detailed in my blog. If you need help with downloading Scrapy and installing the dependencies, please watch this video - http://www.youtube.com/watch?v=eEK2kmmvIdw&feature=plcp
 
 BaseSpider
 -----------
