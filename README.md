@@ -13,10 +13,10 @@ CrawlSpider
 -----------
 - _This tutorial adds to the BaseSpider code, in order to build a recursive crawler to scrape multiple pages. Make sure you read the first tutorial first._
 - Tutorial: http://www.mherman.org/recursively-scraping-web-pages-with-scrapy/
+- Video: http://www.youtube.com/watch?v=P-_TpZ54Vcw
 
 
 
 To-do
 ----------
-1. Add video for CrawlSpider
 1. Add more use cases
