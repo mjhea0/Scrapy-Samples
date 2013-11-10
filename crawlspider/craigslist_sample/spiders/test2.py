@@ -8,7 +8,7 @@ class MySpider(CrawlSpider):
     allowed_domains = ["sfbay.craigslist.org"]
     start_urls = ["http://sfbay.craigslist.org/npo/"]   
 
-    rules = (Rule (SgmlLinkExtractor(allow=("index\d00\.html", ),restrict_xpaths=('//p[@class="nextpage"]',))
+    rules = (Rule (SgmlLinkExtractor(allow=("index\d00\.html", ),restrict_xpaths=('//a[@class="button next"]',))
     , callback="parse_items", follow= True),
     )
 
