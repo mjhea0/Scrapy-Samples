@@ -6,5 +6,5 @@
 from scrapy.item import Item, Field
 
 class CraigslistSampleItem(Item):
-	title = Field()
-	link = Field()
+    title = Field()
+    link = Field()

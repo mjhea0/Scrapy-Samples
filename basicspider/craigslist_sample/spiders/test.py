@@ -1,15 +1,15 @@
-from scrapy.spider import BaseSpider
-from scrapy.selector import HtmlXPathSelector
+from scrapy.spider import Spider
+from scrapy import Selector
 from craigslist_sample.items import CraigslistSampleItem
 
-class MySpider(BaseSpider):
+class MySpider(Spider):
     name = "craig"
     allowed_domains = ["craigslist.org"]
     start_urls = ["http://sfbay.craigslist.org/npo/"]
 
     def parse(self, response):
-        hxs = HtmlXPathSelector(response)
-        titles = hxs.select("//span[@class='pl']")
+        hxs = Selector(response)
+        titles = hxs.xpath("//span[@class='pl']")
         items = []
         for titles in titles:
             item = CraigslistSampleItem()
