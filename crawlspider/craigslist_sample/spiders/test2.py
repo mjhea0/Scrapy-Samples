@@ -14,11 +14,11 @@ class MySpider(CrawlSpider):
 
     def parse_items(self, response):
         hxs = HtmlXPathSelector(response)
-        titles = hxs.select('//span[@class="pl"]')
+        titles = hxs.xpath('//span[@class="pl"]')
         items = []
         for titles in titles:
             item = CraigslistSampleItem()
-            item ["title"] = titles.select("a/text()").extract()
-            item ["link"] = titles.select("a/@href").extract()
+            item ["title"] = titles.xpath("a/text()").extract()
+            item ["link"] = titles.xpath("a/@href").extract()
             items.append(item)
         return(items)
