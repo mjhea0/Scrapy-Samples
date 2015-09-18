@@ -2,10 +2,11 @@ from scrapy.spider import Spider
 from scrapy import Selector
 from craigslist_sample.items import CraigslistSampleItem
 
+
 class MySpider(Spider):
     name = "craig"
     allowed_domains = ["craigslist.org"]
-    start_urls = ["http://sfbay.craigslist.org/npo/"]
+    start_urls = ["http://sfbay.craigslist.org/search/npo"]
 
     def parse(self, response):
         hxs = Selector(response)
@@ -13,7 +14,7 @@ class MySpider(Spider):
         items = []
         for titles in titles:
             item = CraigslistSampleItem()
-            item ["title"] = titles.select("a/text()").extract()
-            item ["link"] = titles.select("a/@href").extract()
+            item["title"] = titles.select("a/text()").extract()
+            item["link"] = titles.select("a/@href").extract()
             items.append(item)
         return items
