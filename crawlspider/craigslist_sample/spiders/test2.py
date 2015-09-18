@@ -1,5 +1,5 @@
 from scrapy.contrib.spiders import CrawlSpider, Rule
-from scrapy.linkextractors import LinkExtractor
+from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from craigslist_sample.items import CraigslistSampleItem
 
@@ -10,7 +10,7 @@ class MySpider(CrawlSpider):
     start_urls = ["http://sfbay.craigslist.org/search/npo"]
 
     rules = (
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@class="button next"]',)), callback="parse_cat", follow= True),
+        Rule(SgmlLinkExtractor(allow=(), restrict_xpaths=('//a[@class="button next"]',)), callback="parse_items", follow= True),
     )
 
     def parse_items(self, response):
