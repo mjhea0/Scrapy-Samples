@@ -17,9 +17,9 @@ class MySpider(CrawlSpider):
         hxs = HtmlXPathSelector(response)
         titles = hxs.xpath('//span[@class="pl"]')
         items = []
-        for titles in titles:
+        for title in titles:
             item = CraigslistSampleItem()
-            item["title"] = titles.xpath("a/text()").extract()
-            item["link"] = titles.xpath("a/@href").extract()
+            item["title"] = title.select('a/span[@id="titletextonly"]/text()').extract()
+            item["link"] = title.xpath("a/@href").extract()
             items.append(item)
         return(items)
